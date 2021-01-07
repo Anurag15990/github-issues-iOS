@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,12 @@
 		75094DED25A7132600F9300E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75094DEB25A7132600F9300E /* LaunchScreen.storyboard */; };
 		75094DF825A7132600F9300E /* github_issues_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75094DF725A7132600F9300E /* github_issues_iOSTests.swift */; };
 		75094E0325A7132600F9300E /* github_issues_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75094E0225A7132600F9300E /* github_issues_iOSUITests.swift */; };
+		75094E2125A71EAA00F9300E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75094E2025A71EAA00F9300E /* NetworkManager.swift */; };
+		75094E2625A71F2000F9300E /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75094E2525A71F2000F9300E /* RequestData.swift */; };
+		75094E6925A7407800F9300E /* NetworkHelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75094E6825A7407800F9300E /* NetworkHelperConstants.swift */; };
+		75094EA025A77BB200F9300E /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75094E9F25A77BB200F9300E /* JSONParameterEncoder.swift */; };
+		75094EA625A77BE300F9300E /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75094EA525A77BE300F9300E /* ParameterEncoder.swift */; };
+		75094EAB25A77C0600F9300E /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75094EAA25A77C0600F9300E /* URLParameterEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,12 @@
 		75094DFE25A7132600F9300E /* github-issues-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-issues-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75094E0225A7132600F9300E /* github_issues_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_issues_iOSUITests.swift; sourceTree = "<group>"; };
 		75094E0425A7132600F9300E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75094E2025A71EAA00F9300E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		75094E2525A71F2000F9300E /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		75094E6825A7407800F9300E /* NetworkHelperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelperConstants.swift; sourceTree = "<group>"; };
+		75094E9F25A77BB200F9300E /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		75094EA525A77BE300F9300E /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
+		75094EAA25A77C0600F9300E /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		77E54B41381898A8FC888ADA /* Pods-github-issues-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-issues-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-github-issues-iOSTests/Pods-github-issues-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		99E68586DF6802EA366A76A4 /* Pods_github_issues_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_issues_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76EB5F3F333DB046FD02423 /* Pods_github_issues_iOS_github_issues_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_issues_iOS_github_issues_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +130,8 @@
 		75094DDC25A7132300F9300E /* github-issues-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				75094EAF25A77C4500F9300E /* Networking */,
+				75094E1F25A71EA000F9300E /* Utilities */,
 				75094DDD25A7132300F9300E /* AppDelegate.swift */,
 				75094DDF25A7132300F9300E /* SceneDelegate.swift */,
 				75094DE125A7132300F9300E /* ViewController.swift */,
@@ -148,6 +162,50 @@
 			path = "github-issues-iOSUITests";
 			sourceTree = "<group>";
 		};
+		75094E1F25A71EA000F9300E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		75094EA425A77BCC00F9300E /* Encoders */ = {
+			isa = PBXGroup;
+			children = (
+				75094EAA25A77C0600F9300E /* URLParameterEncoder.swift */,
+				75094E9F25A77BB200F9300E /* JSONParameterEncoder.swift */,
+				75094EA525A77BE300F9300E /* ParameterEncoder.swift */,
+			);
+			path = Encoders;
+			sourceTree = "<group>";
+		};
+		75094EAF25A77C4500F9300E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				75094EB925A77CE800F9300E /* Models */,
+				75094EB525A77C9B00F9300E /* Constants */,
+				75094EA425A77BCC00F9300E /* Encoders */,
+				75094E2025A71EAA00F9300E /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		75094EB525A77C9B00F9300E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				75094E6825A7407800F9300E /* NetworkHelperConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		75094EB925A77CE800F9300E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75094E2525A71F2000F9300E /* RequestData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		78A2738891076CE29B708934 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +216,6 @@
 				1452CD9A30E8FC942BD8E85C /* Pods-github-issues-iOSTests.debug.xcconfig */,
 				77E54B41381898A8FC888ADA /* Pods-github-issues-iOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -410,9 +467,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75094EA025A77BB200F9300E /* JSONParameterEncoder.swift in Sources */,
 				75094DE225A7132300F9300E /* ViewController.swift in Sources */,
+				75094E6925A7407800F9300E /* NetworkHelperConstants.swift in Sources */,
+				75094EA625A77BE300F9300E /* ParameterEncoder.swift in Sources */,
 				75094DDE25A7132300F9300E /* AppDelegate.swift in Sources */,
+				75094E2125A71EAA00F9300E /* NetworkManager.swift in Sources */,
+				75094E2625A71F2000F9300E /* RequestData.swift in Sources */,
 				75094DE825A7132300F9300E /* github_issues_iOS.xcdatamodeld in Sources */,
+				75094EAB25A77C0600F9300E /* URLParameterEncoder.swift in Sources */,
 				75094DE025A7132300F9300E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
